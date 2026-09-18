@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c1414" />
+    <meta
+      name="description"
+      content="暖舍 AI Interior Rendering Workflow 静态产品体验版。浏览器内选择图片、调整空间参数、体验生成流程并比较真实历史输出。"
+    />
+    <meta property="og:title" content="NUANSHE 暖舍 · AI Interior Rendering Workflow" />
+    <meta
+      property="og:description"
+      content="静态产品 Demo。无后端、无 API Key，图片仅在浏览器本地预览，展示结果为暖舍真实历史输出。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./images/result-afternoon.jpg" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c1414'/%3E%3Cpath d='M17 31 32 18l15 13v16H17V31Z' fill='none' stroke='%23fff8bb' stroke-width='4'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <title>NUANSHE 暖舍 · AI Interior Rendering Workflow</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="#home" aria-label="返回暖舍首页">
+          <span class="brand__mark">NUANSHE</span>
+          <span class="brand__cn">暖舍</span>
+        </a>
+        <nav class="site-nav" aria-label="主导航">
+          <a href="#workspace">Demo</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#examples">Real outputs</a>
+        </nav>
+        <div class="header-note">
+          <span class="status-dot" aria-hidden="true"></span>
+          Static preview
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="home" class="page-view landing-view" data-view="landing">
+        <div class="hero">
+          <img
+            class="hero__image"
+            src="./images/result-afternoon.jpg"
+            alt="暖舍生成的真实住宅餐厅效果图"
+            width="1800"
+            height="1208"
+          />
+          <div class="hero__shade" aria-hidden="true"></div>
+          <div class="hero__content">
+            <p class="eyebrow eyebrow--light">AI Interior Rendering Workflow</p>
+            <h1>
+              NUANSHE
+              <span>暖舍</span>
+            </h1>
+            <p class="hero__lead">
+              将空间输入、风格控制、光线判断与多版本交付，收进一条清晰的室内效果图工作流。
+            </p>
+            <div class="hero__actions">
+              <a class="button button--light button--large" href="#workspace">
+                TRY DEMO
+                <span aria-hidden="true">→</span>
+              </a>
+              <a class="button button--ghost-light button--large" href="#examples">REAL OUTPUTS</a>
+            </div>
+            <p class="hero__note">Static product demo · Browser-only preview · Real archived outputs</p>
+          </div>
+          <div class="hero__folio" aria-hidden="true">
+            <span>01</span>
+            <i></i>
+            <span>AI × INTERIOR DESIGN × WORKFLOW</span>
+          </div>
+        </div>
+
+        <section class="intro-band">
+          <p class="eyebrow">From input to direction</p>
+          <div class="intro-band__grid">
+            <h2>不是一张孤立的效果图，而是一套可重复的视觉判断过程。</h2>
+            <p>
+              从输入类型、空间用途、设计风格，到摄影语言、材质与光线，暖舍把影响最终画面的关键选择放回工作台。
+            </p>
+          </div>
+        </section>
+
+        <section id="workflow" class="workflow-section">
+          <div class="section-heading">
+            <p class="eyebrow">05-step workflow</p>
+            <h2>从空间理解到结果交付</h2>
+          </div>
+          <ol class="workflow-list">
+            <li>
+              <span>01</span>
+              <div>
+                <h3>Analyze image</h3>
+                <p>识别构图、结构与空间关系。</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <h3>Understand space</h3>
+                <p>确认用途、视角与设计方向。</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <h3>Apply visual style</h3>
+                <p>组合材质、色调、摄影与光线语言。</p>
+              </div>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <h3>Generate result</h3>
+                <p>形成基础、氛围与人物等多版本结果。</p>
+              </div>
+            </li>
+            <li>
+              <span>05</span>
+              <div>
+                <h3>Compare & deliver</h3>
+                <p>通过前后滑杆和版本切换完成判断。</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section id="examples" class="examples-section">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Real archived outputs</p>
+              <h2>真实素材，不虚构案例</h2>
+            </div>
+            <p>
+              以下图片均来自现有暖舍 V2 项目本地归档。没有用户数量、生成次数、转化率或商业客户数据。
+            </p>
+          </div>
+          <div id="case-grid" class="case-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="truth-band">
+          <div>
+            <p class="eyebrow eyebrow--light">Demo boundary</p>
+            <h2>体验真实交互，不伪装实时 AI。</h2>
+          </div>
+          <div class="truth-band__notes">
+            <p>上传图片只进入浏览器内存，不做网络传输，不写入存储。</p>
+            <p>生成过程是静态状态演示，结束后展示已经真实生成过的暖舍结果。</p>
+          </div>
+          <a class="button button--light" href="#workspace">进入工作台</a>
+        </section>
+      </section>
+
+      <section id="workspace" class="page-view workspace-view" data-view="workspace" hidden>
+        <div class="workspace-heading">
+          <div>
+            <p class="eyebrow">Nuanshe static workspace</p>
+            <h1>AI 精修工作台</h1>
+          </div>
+          <div class="workspace-heading__meta">
+            <span class="demo-badge">Demo Preview</span>
+            <span>No upload · No API · No account</span>
+          </div>
+        </div>
+
+        <div class="workspace-layout">
+          <aside class="control-rail" aria-label="生成参数">
+            <section class="control-section">
+              <div class="control-heading">
+                <span>01</span>
+                <h2>输入图片</h2>
+              </div>
+              <input
+                id="file-input"
+                class="sr-only"
+                type="file"
+                accept="image/png,image/jpeg,image/webp"
+              />
+              <button id="upload-button" class="upload-zone" type="button">
+                <span class="upload-zone__icon" aria-hidden="true">+</span>
+                <span>
+                  <strong>选择本地图片</strong>
+                  <small>PNG / JPG / WebP，仅在当前浏览器预览</small>
+                </span>
+              </button>
+              <p id="upload-status" class="field-note">当前使用暖舍真实输入样片。</p>
+            </section>
+
+            <section class="control-section">
+              <div class="control-heading">
+                <span>02</span>
+                <h2>空间方向</h2>
+              </div>
+              <fieldset class="field-group">
+                <legend>输入类型</legend>
+                <div class="segment-control" id="input-type-control">
+                  <label>
+                    <input type="radio" name="input-type" value="white-model" />
+                    <span>白模渲染</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="input-type" value="refine" checked />
+                    <span>效果图精修</span>
+                  </label>
+                </div>
+              </fieldset>
+              <label class="field-group">
+                <span>空间类型</span>
+                <select id="space-select"></select>
+              </label>
+              <label class="field-group">
+                <span>摄影风格</span>
+                <select id="photo-select"></select>
+              </label>
+            </section>
+
+            <section class="control-section">
+              <div class="control-heading">
+                <span>03</span>
+                <h2>设计风格</h2>
+              </div>
+              <div id="style-grid" class="style-grid"></div>
+            </section>
+
+            <section class="control-section">
+              <div class="control-heading">
+                <span>04</span>
+                <h2>材质与光线</h2>
+              </div>
+              <label class="field-group">
+                <span>材质偏好</span>
+                <input
+                  id="material-input"
+                  class="text-input"
+                  type="text"
+                  value="胡桃木、天然石材、亚麻布艺"
+                  autocomplete="off"
+                />
+              </label>
+              <label class="field-group">
+                <span>光线时刻</span>
+                <select id="lighting-select"></select>
+              </label>
+              <label class="switch-row">
+                <span>
+                  <strong>AI 生成人物</strong>
+                  <small>完成后追加真实人物版样片</small>
+                </span>
+                <input id="people-toggle" type="checkbox" />
+              </label>
+              <label id="people-field" class="field-group" hidden>
+                <span>人物场景</span>
+                <select id="people-select">
+                  <option value="reading">沙发阅读</option>
+                  <option value="dining">餐桌交流</option>
+                  <option value="window">窗边停留</option>
+                </select>
+              </label>
+            </section>
+
+            <section class="control-section">
+              <div class="control-heading">
+                <span>05</span>
+                <h2>输出</h2>
+              </div>
+              <fieldset class="field-group">
+                <legend>分辨率</legend>
+                <div class="segment-control" id="resolution-control">
+                  <label>
+                    <input type="radio" name="resolution" value="2K" checked />
+                    <span>2K</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="resolution" value="4K" />
+                    <span>4K</span>
+                  </label>
+                </div>
+              </fieldset>
+              <p class="field-note">静态 Demo 不产生真实图片，不消耗积分。</p>
+            </section>
+
+            <div class="generate-bar">
+              <button id="generate-button" class="button button--primary button--wide" type="button">
+                生成体验结果
+              </button>
+              <button id="reset-button" class="text-button" type="button">重置工作台</button>
+            </div>
+          </aside>
+
+          <div class="workspace-stage">
+            <section class="stage-toolbar">
+              <div>
+                <p class="eyebrow">Live workspace state</p>
+                <h2 id="stage-title">准备生成</h2>
+              </div>
+              <div class="stage-status">
+                <span id="stage-status-dot" class="status-dot" aria-hidden="true"></span>
+                <span id="stage-status-text">Ready</span>
+              </div>
+            </section>
+
+            <section class="generation-panel" aria-live="polite">
+              <div class="progress-track" id="progress-track">
+                <span></span>
+              </div>
+              <ol id="stage-list" class="stage-list"></ol>
+            </section>
+
+            <section class="preview-panel">
+              <div class="preview-panel__head">
+                <div>
+                  <p class="eyebrow">Local input / demo result</p>
+                  <h2>画面预览</h2>
+                </div>
+                <span class="demo-badge demo-badge--soft">Sample output</span>
+              </div>
+              <div class="preview-grid">
+                <figure class="image-frame">
+                  <div class="image-frame__media">
+                    <img id="local-preview" src="./images/sample-input.jpg" alt="当前本地输入预览" />
+                    <span class="image-frame__tag">LOCAL ONLY</span>
+                  </div>
+                  <figcaption>
+                    <span>输入预览</span>
+                    <small id="local-preview-caption">暖舍真实输入样片</small>
+                  </figcaption>
+                </figure>
+                <figure class="image-frame">
+                  <div class="image-frame__media">
+                    <img id="result-preview" src="./images/result-afternoon.jpg" alt="暖舍真实 Demo 结果" />
+                    <span class="image-frame__tag image-frame__tag--accent">DEMO PREVIEW</span>
+                  </div>
+                  <figcaption>
+                    <span id="result-preview-title">暖光午后</span>
+                    <small>真实历史输出，不是当前上传图的生成结果</small>
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section id="compare-section" class="compare-section" hidden>
+              <div class="preview-panel__head">
+                <div>
+                  <p class="eyebrow">Original ↔ AI enhanced</p>
+                  <h2>真实样片 Before / After</h2>
+                </div>
+                <div class="view-switch" aria-label="比较方式">
+                  <button class="view-switch__button is-active" type="button" data-compare-mode="slider">滑杆</button>
+                  <button class="view-switch__button" type="button" data-compare-mode="side">并排</button>
+                </div>
+              </div>
+
+              <div id="compare-slider" class="compare-slider">
+                <div class="compare-slider__viewport" id="compare-viewport">
+                  <img
+                    class="compare-slider__image compare-after-image"
+                    src="./images/result-afternoon.jpg"
+                    alt="暖舍 AI 优化后的真实结果"
+                    draggable="false"
+                  />
+                  <div id="compare-overlay" class="compare-slider__overlay">
+                    <img
+                      class="compare-slider__image"
+                      src="./images/sample-input.jpg"
+                      alt="暖舍真实原始输入"
+                      draggable="false"
+                    />
+                  </div>
+                  <span class="compare-slider__label compare-slider__label--left">Original</span>
+                  <span class="compare-slider__label compare-slider__label--right">AI Enhanced</span>
+                  <span id="compare-handle" class="compare-slider__handle" aria-hidden="true">
+                    <i>↔</i>
+                  </span>
+                </div>
+                <label class="range-label" for="compare-range">拖动比较真实输入与真实输出</label>
+                <input id="compare-range" class="compare-range" type="range" min="0" max="100" value="50" />
+              </div>
+
+              <div id="compare-side" class="compare-side" hidden>
+                <figure>
+                  <img src="./images/sample-input.jpg" alt="暖舍真实原始输入" />
+                  <figcaption>Original</figcaption>
+                </figure>
+                <figure>
+                  <img class="compare-after-image" src="./images/result-afternoon.jpg" alt="暖舍 AI 优化后的真实结果" />
+                  <figcaption>AI Enhanced</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section id="results-section" class="results-section" hidden>
+              <div class="preview-panel__head">
+                <div>
+                  <p class="eyebrow">Multi-version compare</p>
+                  <h2>结果版本</h2>
+                </div>
+                <span id="result-count" class="counter-label">0 versions</span>
+              </div>
+              <div id="result-grid" class="result-grid"></div>
+            </section>
+
+            <details class="prompt-panel">
+              <summary>
+                <span>
+                  <span class="eyebrow">Prompt preview</span>
+                  <strong>查看参数组合后的提示词结构</strong>
+                </span>
+                <span aria-hidden="true">＋</span>
+              </summary>
+              <textarea id="prompt-output" readonly rows="8"></textarea>
+            </details>
+
+            <aside class="privacy-note">
+              <strong>Local file boundary</strong>
+              <p>
+                你选择的图片只通过浏览器 File API 读取，并使用 Object URL 在页面内显示。刷新页面后预览会清空。
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <span class="brand__mark">NUANSHE</span>
+        <span>暖舍静态展示版</span>
+      </div>
+      <p>Static GitHub Pages demo. No server, database, API key, or user tracking.</p>
+    </footer>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

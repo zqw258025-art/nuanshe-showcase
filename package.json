@@ -1,0 +1,16 @@
+{
+  "name": "nuanshe-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "暖舍静态产品体验版",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --test tests/*.test.mjs && node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
